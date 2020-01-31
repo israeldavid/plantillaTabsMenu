@@ -38,6 +38,16 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'contacto',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../contacto/contacto.module').then(m => m.ContactoPageModule)
+          }
+        ]
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'
